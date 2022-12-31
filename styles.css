@@ -1,0 +1,202 @@
+:root {
+    --background-color: black;
+    --blur-color: #ffffff;
+    --first-neon-color: #7A00A5;
+    --second-neon-color:#FB00D3;
+    --third-neon-color:#00D3D3;
+    --fourth-neon-color:#FFF84B;
+
+    --instagram-color: #e12f6b;
+    --twitter-color: #1da1f2;
+    --github-color: #823ab4;
+    --youtube-color: #fd1c1c;
+    --tiktok-color: #64fdf9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 1s;
+}
+
+ul {
+    /*sem pontinhos de lista*/
+    list-style: none;
+}
+
+body {
+    background-color: var(--background-color);
+
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons {
+    /*CAIXA EXTERNA*/
+    height: 600px;
+    width: 1000px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--blur-color);
+    display:grid;
+    margin-top: 100px;    
+
+    animation: pulsate 1.5s infinite alternate;
+
+    /*STYLE*/
+    border-radius: 50px;
+    box-shadow: 
+        0 0 7px var(--blur-color),
+        0 0 10px var(--blur-color),
+        0 0 21px var(--blur-color),
+        0 0 42px var(--blur-color),
+        inset 0 0 7px var(--blur-color),
+        inset 0 0 10px var(--blur-color);
+
+        /* 0 0 82px var(--blur-color),
+        0 0 92px var(--blur-color),
+        0 0 102px var(--blur-color),
+        0 0 151px var(--blur-color); */
+
+}
+
+main ul {
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 40px;
+}
+
+
+
+img {
+    max-width: 60px;
+    filter:drop-shadow(
+        0 0 3px var(--blur-color)
+    );
+}
+
+img:hover {
+    scale: 1.3;
+}
+
+#instagram:hover {
+    filter: drop-shadow(
+        0 0 10px var(--instagram-color)
+    );
+}
+
+#twitter:hover {
+    filter: drop-shadow(
+        0 0 10px var(--twitter-color)
+    );
+}
+
+#github:hover {
+    filter: drop-shadow(
+        0 0 10px var(--github-color)
+    );
+}
+
+#youtube:hover {
+    filter: drop-shadow(
+        0 0 10px var(--youtube-color)
+    );
+}
+
+#tiktok:hover {
+    filter: drop-shadow(
+        0 0 10px var(--tiktok-color)
+    );
+}
+
+main li {
+    animation: fromBottom .7s backwards;
+}
+
+main li:nth-child(1){
+    animation-delay: 0s;
+}
+
+main li:nth-child(2){
+    animation-delay: .2s;
+}
+
+main li:nth-child(3){
+    animation-delay: .4s;
+}
+
+main li:nth-child(4){
+    animation-delay: .6s;
+}
+
+main li:nth-child(5){
+    animation-delay: .8s;
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }    
+}
+
+@keyframes pulsate {
+    0%   {box-shadow:
+            0 0 7px var(--blur-color),
+            0 0 10px var(--blur-color),
+            0 0 21px var(--blur-color),
+            0 0 42px var(--first-neon-color),         
+            inset 0 0 7px var(--blur-color),
+            inset 0 0 10px var(--blur-color),
+            inset 0 0 21px var(--first-neon-color);
+        }
+
+    33%  {box-shadow:
+            0 0 7px var(--blur-color),
+            0 0 10px var(--blur-color),
+            0 0 21px var(--blur-color),
+            0 0 42px var(--second-neon-color),           
+            inset 0 0 7px var(--blur-color),
+            inset 0 0 10px var(--blur-color),
+            inset 0 0 21px var(--second-neon-color);
+        }
+
+    66%  {box-shadow: 
+            0 0 7px var(--blur-color),
+            0 0 10px var(--blur-color),
+            0 0 21px var(--blur-color),
+            0 0 42px var(--third-neon-color),
+            inset 0 0 7px var(--blur-color),
+            inset 0 0 10px var(--blur-color),
+            inset 0 0 21px var(--third-neon-color);
+        }
+    100%  {box-shadow:            
+            0 0 7px var(--blur-color),
+            0 0 10px var(--blur-color),
+            0 0 21px var(--blur-color),
+            0 0 42px var(--fourth-neon-color),           
+            inset 0 0 7px var(--blur-color),
+            inset 0 0 10px var(--blur-color),
+            inset 0 0 21px var(--fourth-neon-color);
+        }
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    margin-top: 45px;
+    color: #1D1D1D;
+}
